@@ -86,7 +86,7 @@ impl EditMap {
         let mut jumps = Vec::with_capacity(self.map.len());
         let mut add_acc = 0;
         let mut remove_acc = 0;
-        for (at, (remove, add)) in self.map.iter() {
+        for (at, (remove, add)) in &self.map {
             remove_acc += remove;
             add_acc += add.len();
             jumps.push((*at, remove_acc, add_acc));
